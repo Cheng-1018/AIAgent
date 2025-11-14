@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能旅行助手</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 智能旅行助手</h1>
+            <p class="subtitle">让AI为您规划完美的旅行</p>
+        </header>
+
+        <main>
+            <!-- 输入表单 -->
+            <section class="input-section">
+                <h2>旅行信息</h2>
+                <form id="tripForm">
+                    <div class="form-group">
+                        <label for="city">目的地城市 *</label>
+                        <input type="text" id="city" name="city" required placeholder="例如：北京">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">开始日期 *</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">结束日期 *</label>
+                            <input type="date" id="endDate" name="endDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transportation">交通方式 *</label>
+                        <select id="transportation" name="transportation" required>
+                            <option value="公共交通">公共交通</option>
+                            <option value="自驾">自驾</option>
+                            <option value="步行">步行</option>
+                            <option value="混合">混合</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accommodation">住宿偏好 *</label>
+                        <select id="accommodation" name="accommodation" required>
+                            <option value="经济型酒店">经济型酒店</option>
+                            <option value="舒适型酒店">舒适型酒店</option>
+                            <option value="豪华酒店">豪华酒店</option>
+                            <option value="民宿">民宿</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>兴趣偏好（可多选）</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="preferences" value="历史文化"> 历史文化</label>
+                            <label><input type="checkbox" name="preferences" value="自然风光"> 自然风光</label>
+                            <label><input type="checkbox" name="preferences" value="美食"> 美食</label>
+                            <label><input type="checkbox" name="preferences" value="购物"> 购物</label>
+                            <label><input type="checkbox" name="preferences" value="艺术"> 艺术</label>
+                            <label><input type="checkbox" name="preferences" value="休闲"> 休闲</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="freeText">额外要求</label>
+                        <textarea id="freeText" name="freeText" rows="3" placeholder="例如：想看升旗，对海鲜过敏等"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="planBtn">
+                        <span id="btnText">开始规划</span>
+                        <span id="btnLoader" class="loader" style="display: none;"></span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- 结果展示 -->
+            <section class="result-section" id="resultSection" style="display: none;">
+                <h2>行程规划结果</h2>
+
+                <!-- 行程概览 -->
+                <div class="overview-card">
+                    <h3>📋 行程概览</h3>
+                    <div id="overviewContent"></div>
+                </div>
+
+                <!-- 预算明细 -->
+                <div class="budget-card">
+                    <h3>💰 预算明细</h3>
+                    <div id="budgetContent"></div>
+                </div>
+
+                <!-- 天气信息 -->
+                <div class="weather-card">
+                    <h3>🌤️ 天气预报</h3>
+                    <div id="weatherContent"></div>
+                </div>
+
+                <!-- 每日行程 -->
+                <div class="daily-plans">
+                    <h3>📅 每日行程</h3>
+                    <div id="dailyPlansContent"></div>
+                </div>
+
+                <!-- 总体建议 -->
+                <div class="suggestions-card">
+                    <h3>💡 旅行建议</h3>
+                    <div id="suggestionsContent"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 智能旅行助手 - Powered by AI & MCP</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

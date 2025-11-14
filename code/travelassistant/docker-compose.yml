@@ -1,0 +1,38 @@
+services:
+  travelassistant:
+    build: .
+    container_name: travel-assistant
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # LLM配置
+      - LLM_MODEL_ID=${LLM_MODEL_ID}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LLM_BASE_URL=${LLM_BASE_URL}
+      # 高德地图配置
+      - AMAP_API_KEY=${AMAP_API_KEY}
+      # Unsplash配置
+      - UNSPLASH_ACCESS_KEY=${UNSPLASH_ACCESS_KEY}
+      - UNSPLASH_SECRET_KEY=${UNSPLASH_SECRET_KEY}
+      # API配置
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_RELOAD=False
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - travel-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  travel-net:
+    driver: bridge
+
+volumes:
+  logs:

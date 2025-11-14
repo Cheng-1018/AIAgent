@@ -1,0 +1,22 @@
+# FastAPI和Web服务
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Pydantic数据验证
+pydantic
+
+# HTTP客户端
+httpx
+
+# OpenAI API客户端
+openai
+
+# MCP库
+mcp
+
+# 环境变量管理
+python-dotenv
+
+# 异步支持
+anyio
