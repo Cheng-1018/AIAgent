@@ -1,12 +1,3 @@
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-
 # AGENT学习笔记
 
 本仓库是个人学习AGENT的笔记与代码。学习源来自DataWhale的[HelloAgent](https://datawhalechina.github.io/hello-agents/#/)
@@ -36,4 +27,7 @@ MathJax.Hub.Config({
 ## 学习资源
 
 - **[Hello-agents](https://datawhalechina.github.io/hello-agents/#/./README)** - Datawhale教程
-- 
+-  [The Rise and Potential of Large Language Model Based Agents: A Survey](https://xuanjing-huang.github.io/files/agent.pdf)
+-  [A Survey of LLM-based Deep Search Agents: Paradigm, Optimization,Evaluation, and Challenges](https://arxiv.org/pdf/2508.05668)
+-  [Lumine: An Open Recipe for Building Generalist Agents in 3D Open Worlds](http://arxiv.org/abs/2511.08892)
+-  [Deep Literature Survey Automation with an Iterative Workflow](https://arxiv.org/abs/2510.21900)

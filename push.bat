@@ -1,7 +1,7 @@
-echo
-set https_proxy=http://127.0.0.1:7897
+@echo off
 set http_proxy=http://127.0.0.1:7897
-
+set https_proxy=http://127.0.0.1:7897
 git add .
-git commit -m "first commit"
+git commit -m "加一点论文资源"
 git push
+pause
