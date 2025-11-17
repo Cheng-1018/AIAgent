@@ -2,6 +2,11 @@
 
 基于LLM和MCP的智能旅行规划系统，为用户提供个性化的旅行行程规划。
 
+<div align='center'>
+<img src="./static/image.png" alt="比较" width="400">
+</div>
+
+
 ## ✨ 功能特性
 
 - 🎯 **智能行程规划**：根据用户偏好自动规划旅行行程

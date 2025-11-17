@@ -2,6 +2,6 @@
 set http_proxy=http://127.0.0.1:7897
 set https_proxy=http://127.0.0.1:7897
 git add .
-git commit -m "加一点Diffusion model资源"
+git commit -m "增加一个项目
 git push
 pause

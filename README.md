@@ -11,11 +11,17 @@
 | 1 | [经典智能体范式](note/1.经典智能体.md) | ReAct、Plan and Solve、Reflect |
 | 2 | [框架介绍](note/2.框架介绍.md) | AutoGen、AgentScope、CAMEL、LangGraph |
 | 3 | [框架开发实践](note/3.框架开发实践.md) | Agent Tool Memory RAG protocol |
-| 2 | [智能体评估](note/4.智能体评估.md) | BenchMark BFCL GAIA |
-| 2 | [智能体实践](note/5.智能体实践.md) | //TODO  |
+| 4 | [智能体评估](note/4.智能体评估.md) | BenchMark BFCL GAIA |
+| 5 | [智能体实践](note/5.智能体实践.md) | //TODO  |
 
 
 ### 实践篇
+
+| 主题 | 内容 |
+|------|------|
+| [经典智能体](code/1.经典智能体/) | ReAct、Plan and Solve、Reflect |
+| [智能旅行助手](code/travelassistant/README_GUIDE.md) | FastAP IHTML CSS JavaScript |
+| [AI斗地主](code/LLMDOUDIZHU/frontend/README.md) | Flask Flask-SocketIO Flask-CORS Soocket,IO |
 
 
 
