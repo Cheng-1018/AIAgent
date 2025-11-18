@@ -15,7 +15,13 @@ class DouDiZhuGame {
 
     // 初始化Socket连接
     initSocket() {
-        this.socket = io('http://localhost:5000');
+        // 自动使用当前页面的主机地址和端口
+        const protocol = window.location.protocol;
+        const hostname = window.location.hostname;
+        const port = window.location.port || '5000';
+        const serverUrl = `${protocol}//${hostname}:${port}`;
+
+        this.socket = io(serverUrl);
 
         this.socket.on('connected', (data) => {
             console.log('已连接到服务器:', data);
@@ -134,7 +140,13 @@ class DouDiZhuGame {
         this.showLoading();
 
         try {
-            const response = await fetch('http://localhost:5000/api/start_game', {
+            // 自动使用当前页面的主机地址和端口
+            const protocol = window.location.protocol;
+            const hostname = window.location.hostname;
+            const port = window.location.port || '5000';
+            const apiUrl = `${protocol}//${hostname}:${port}/api/start_game`;
+
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

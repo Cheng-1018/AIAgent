@@ -41,8 +41,8 @@ def start_game():
     data = request.json
     player_types = data.get('player_types', {
         '地主': 'human',
-        '农民甲': 'ai',
-        '农民乙': 'ai'
+        '农民甲': 'human',
+        '农民乙': 'human'
     })
     
     # 初始化环境
@@ -140,7 +140,7 @@ def handle_player_action(data):
             'hands': game_env.hands
         })
     else:
-        # 更新该玩家的最后出牌（如果不是PASS）
+        # 更新该玩家的最后出牌
         if 'last_plays' not in current_game_state:
             current_game_state['last_plays'] = {'地主': [], '农民甲': [], '农民乙': []}
         current_game_state['last_plays'][player] = decision
@@ -209,10 +209,10 @@ def ai_make_decision():
         playing_player = current_player
         
         # 更新该玩家的最后出牌（如果不是PASS）
-        if decision != ['PASS']:
-            if 'last_plays' not in current_game_state:
-                current_game_state['last_plays'] = {'地主': [], '农民甲': [], '农民乙': []}
-            current_game_state['last_plays'][playing_player] = decision
+        
+        if 'last_plays' not in current_game_state:
+            current_game_state['last_plays'] = {'地主': [], '农民甲': [], '农民乙': []}
+        current_game_state['last_plays'][playing_player] = decision
         
         current_player, hand, action_space, history, state = game_env.Observe()
         current_game_state.update({
@@ -236,4 +236,15 @@ def ai_make_decision():
 
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
+    import os
+    # 检测是否在后台运行（通过环境变量控制）
+    is_production = os.environ.get('FLASK_ENV') == 'production'
+    
+    socketio.run(
+        app, 
+        host='0.0.0.0', 
+        port=5000, 
+        debug=not is_production,  # 生产环境关闭 debug
+        allow_unsafe_werkzeug=True,
+        log_output=True  # 确保日志输出
+    )

@@ -2,5 +2,8 @@ flask==3.0.0
 flask-socketio==5.3.5
 flask-cors==4.0.0
 python-socketio==5.10.0
-# 移除eventlet，使用threading模式
-# eventlet==0.33.3
+# 生产环境使用 eventlet 提供更好的异步支持
+eventlet==0.33.3
+# 或者使用 gevent（二选一）
+# gevent==23.9.1
+# gevent-websocket==0.10.1
